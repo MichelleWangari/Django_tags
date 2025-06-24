@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Filters{% endblock title %}
+
+{% block content %}
+<h2>{{ my_string | upper }}</h2>
+
+<h2>Date</h2>
+<p>Date: {{ my_date | date:"F j, Y"}}</p>
+
+<h2>Truncate characters</h2>
+<p>Truncate: {{ long_string |truncatechars:14}}</P>
+
+<h2>Check Length</h2>
+<p>Length: {{long_str |length }}</p>
+
+<h2>Default Name</h2>
+<p>Default name: {{default_name | default:"default_name" }}</p>
+
+<h2>Capfirst filter</h2>
+<p> {{ sentence |capfirst}}</p>
+
+<h2>WordCount</h2>
+<p> {{word_count |wordcount}}</p>
+
+<h2>Slice filter</h2>
+<p> {{long_str |slice:"6"}}</p>
+
+<h2>Join list</h2>
+<p> {{fruits |join:","}}</p>
+
+<h2>Linebreaks filter</h2>
+<p>{{ multi_line |linebreaks }}</p> 
+{% endblock content %}
